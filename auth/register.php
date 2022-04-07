@@ -82,7 +82,7 @@
                 </div>
 
                 <!-- PARAGRAPH -->
-                <p style="margin-top: 1rem; text-align:center"> Anda sudah punya akun? <a href="Bintang_login.php"> Login</a> </p>
+                <p style="margin-top: 1rem; text-align:center"> Anda sudah punya akun? <a href="login.php"> Login</a> </p>
 
             </form>
         </div>
