@@ -1,3 +1,4 @@
-Jewellery Website Store using PHP Native
-
 Toko Perak
+
+username: Perakduoputri
+Password : 030
