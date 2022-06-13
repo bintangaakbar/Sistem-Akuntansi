@@ -5,8 +5,9 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-$query = "SELECT * FROM perhiasan";
-$select = mysqli_query($conn, $query);
+
+$querydata = "SELECT * FROM perhiasan";
+$selectdata = mysqli_query($conn, $querydata);
 
 if (isset($_SESSION)) {
     $id = $_SESSION['id'];
@@ -17,6 +18,9 @@ if (isset($_SESSION)) {
 if (isset($_POST['login'])) {
     login($_POST);
 }
+
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -38,7 +42,7 @@ if (isset($_POST['login'])) {
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" id="nav1">
         <div class="container-fluid ">
-            <a class="navbar-brand" href="#"><img src="img/home.jpeg" class="rounded-circle" alt="" width="70px"></a>
+            <a class="navbar-brand" href="#"><img src="img/Duo Putri-logos.jpeg" class="rounded-circle" alt="" width="70px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -74,11 +78,9 @@ if (isset($_POST['login'])) {
 </head>
 
 <body>
-
-
     <section class="row justify-content-center mt-3">
-        <?php if ($select->num_rows > 0) { ?>
-            <?php while ($selects = mysqli_fetch_assoc($select)) { ?>
+        <?php if ($selectdata->num_rows > 0) { ?>
+            <?php while ($selects = mysqli_fetch_assoc($selectdata)) { ?>
                 <div class="card me-3 align-items-center d-flex flex-column" style="width: 18rem;">
                     <img src="file/<?php echo $selects['gambar'] ?>" class="card-img-top" alt="..." style="width:200px">
                     <div class="card-body">

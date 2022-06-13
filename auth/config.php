@@ -65,7 +65,7 @@ if (isset($_POST['tambah'])) {
     }
     $insert = mysqli_query($conn, $query);
 
-    header('Location: ./index.php');
+    header('Location: ../index.php');
 }
 
 function register($request)

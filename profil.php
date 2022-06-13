@@ -26,6 +26,7 @@ if (isset($_SESSION)) {
     <link rel="stylesheet" href="Bintang_Style_register.css">
 
     <title>Duo Putri</title>
+    <link rel="icon" href="img/Duo Putri-logos.jpeg">
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" id="nav1">
@@ -42,7 +43,7 @@ if (isset($_SESSION)) {
                             <?php echo $select['nama'] ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="profil.php">Profile</a></li>
+                            <li><a class="dropdown-item" href="profil.php">Profil</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -69,7 +70,7 @@ if (isset($_SESSION)) {
                 <div>
                     <input type="hidden" name="id" value="<?php echo $select['id'] ?>">
                     <div class="modal-body">
-                        <div class=" container row">
+                        <div class=" container">
 
                             <div class="mb-3 row">
                                 <label class="col-sm-2 col-form-label">Email</label>
@@ -112,7 +113,7 @@ if (isset($_SESSION)) {
 
                             <div class="col d-flex justify-content-center">
                                 <button type="submit" class="btn btn-primary me-2" name="update">Simpan</button>
-                                <button type="button" class="btn btn-warning">Cancel</button>
+                                <a href="index.php" type="button" class="btn btn-danger">Cancel</a>
                             </div>
                         </div>
                     </div>
