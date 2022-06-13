@@ -31,7 +31,7 @@ if (isset($_SESSION)) {
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" id="nav1">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="img/home.jpeg" class="rounded-circle" alt="" width="70px"></a>
+            <a class="navbar-brand" href="index.php"><img src="img/home.jpeg" class="rounded-circle" alt="" width="70px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -43,7 +43,7 @@ if (isset($_SESSION)) {
                             <?php echo $select['nama'] ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="profil.php">Profil</a></li>
+                            <li><a class="dropdown-item" href="profil.php">Profile</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

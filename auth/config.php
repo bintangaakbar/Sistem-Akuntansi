@@ -14,7 +14,6 @@ if (!$conn) {
 
 if (isset($_GET['logout'])) {
     session_destroy();
-    session_start();
     $_SESSION['message'] = 'Berhasil Logout';
     header("Location: login.php");
 }
@@ -64,6 +63,16 @@ if (isset($_POST['tambah'])) {
         }
     }
     $insert = mysqli_query($conn, $query);
+
+    header('Location: ../index.php');
+}
+
+function delete($request)
+{
+    global $conn;
+    $id = $_GET['id'];
+    $query = "DELETE FROM perhiasan WHERE id ='$id'";
+    $update = mysqli_query($conn, $query);
 
     header('Location: ../index.php');
 }

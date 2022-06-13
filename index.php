@@ -87,6 +87,7 @@ if (isset($_POST['login'])) {
                         <h5 class="card-title"><?php echo $selects['nama'] ?></h5>
                         <p class="card-text"><?php echo $selects['deskripsi'] ?> </p>
                     </div>
+                    <a href="detail_perhiasan.php?id=<?php echo $selects['id'] ?>" class="btn btn-primary">Tampilkan Lebih Lanjut</a>
                 </div>
             <?php } ?>
         <?php } else { ?>
