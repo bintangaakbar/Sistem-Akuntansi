@@ -1,3 +1,17 @@
+<?php
+
+include('config.php');
+session_start();
+
+if (isset($_POST['login'])) {
+    login($_POST);
+}
+
+// if (isset($_SESSION['nama'])) {
+//     header("Location: ./index.php");
+// }
+?>
+
 <!doctype html>
 <html lang="en">
 

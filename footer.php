@@ -55,20 +55,14 @@
                     </ul>
                 </div>
             </div>
-            <div class="row">
-                <div class="col ">
-                    <div class="copyright">
-                        <p>&#169; Copyright 2022. All Rights Reserved</p>
-                    </div>
-                </div>
+
+            <div class="text-center">
+                <p>&#169; Copyright 2022. All Rights Reserved</p>
             </div>
+        </div>
 
         </div>
     </footer>
-
-
-
-
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
