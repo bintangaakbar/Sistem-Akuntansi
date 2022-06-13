@@ -19,6 +19,7 @@ if (isset($_GET['logout'])) {
     header("Location: login.php");
 }
 
+
 if (isset($_POST['update'])) {
     $id = $_SESSION['id'];
     $nama = $_POST['nama'];
@@ -31,21 +32,41 @@ if (isset($_POST['update'])) {
     if ($password == $passwordconfirm) {
         $password = password_hash($password, PASSWORD_DEFAULT);
 
-        $query = "UPDATE users set  nama='$nama',  no_hp='$no_hp',  password='$password' WHERE id = '$id' ";
+        $query = "UPDATE user set  nama='$nama',  no_hp='$no_hp',  password='$password' WHERE id = '$id' ";
         mysqli_query($conn, $query);
 
         $_SESSION['message'] = 'Berhasil update profile';
         setcookie('warna', $warna, strtotime('+6 days'), '/');
 
-        header("Location: Bintang_profil.php");
+        header("Location: ../profil.php");
     } else {
         $_SESSION['message'] = 'Password Tidak sama';
 
-        header("Location: Bintang_profil.php");
+        header("Location: ../profil.php");
     }
 }
 
 
+if (isset($_POST['tambah'])) {
+    $id = $_GET['id'];
+    $nama = $_POST['nama'];
+    $deskripsi = $_POST['deskripsi'];
+    $harga = $_POST['harga'];
+    $jenis = implode(" ", $_POST['jenis']);
+    $gambar = $_FILES['gambar']['name'];
+
+    $query = "INSERT INTO perhiasan (nama, deskripsi, harga, jenis, gambar) 
+    VALUES ('$nama', '$deskripsi', '$harga', '$jenis', '$gambar')";
+
+    if (($gambar) > 0) {
+        if (is_uploaded_file($_FILES['gambar']['tmp_name'])) {
+            move_uploaded_file($_FILES['gambar']['tmp_name'], "file/" . $gambar);
+        }
+    }
+    $insert = mysqli_query($conn, $query);
+
+    header('Location: ./index.php');
+}
 
 function register($request)
 {
