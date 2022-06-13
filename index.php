@@ -37,8 +37,8 @@ if (isset($_POST['login'])) {
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" id="nav1">
-        <div class="container-fluid">
-            <a class="navbar-brand rounded-pill" href="#"><img src="img/home.jpeg" alt="" width="70px"></a>
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="#"><img src="img/home.jpeg" class="rounded-circle" alt="" width="70px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -74,6 +74,28 @@ if (isset($_POST['login'])) {
 </head>
 
 <body>
+
+
+    <section class="row justify-content-center mt-3">
+        <?php if ($select->num_rows > 0) { ?>
+            <?php while ($selects = mysqli_fetch_assoc($select)) { ?>
+                <div class="card me-3 align-items-center d-flex flex-column" style="width: 18rem;">
+                    <img src="file/<?php echo $selects['gambar'] ?>" class="card-img-top" alt="..." style="width:200px">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $selects['nama'] ?></h5>
+                        <p class="card-text"><?php echo $selects['deskripsi'] ?> </p>
+                    </div>
+                </div>
+            <?php } ?>
+        <?php } else { ?>
+            <div class="container" style="margin-top: 10rem; text-align:center;">
+                <h3 class="mb-4">Belum Ada Buku</h3>
+                <hr style="height:5px; width:80%; border-width:0; color:aqua; margin:auto">
+                <p class="mt-2">Silahkan Menambahkan Buku</p>
+            </div>
+        <?php } ?>
+    </section>
+
 
 
 
