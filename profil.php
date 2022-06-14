@@ -1,10 +1,9 @@
 <?php
+session_start();
 include('./auth/config.php');
-
-if (!isset($_SESSION)) {
-    session_start();
+if (isset($_POST['update'])) {
+    update($_POST);
 }
-
 if (isset($_SESSION)) {
     $id = $_SESSION['id'];
     $query = "SELECT * FROM user WHERE id='$id' LIMIT 1";
@@ -47,7 +46,7 @@ if (isset($_SESSION)) {
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="./auth/config.php?logout=logout">Logout</a></li>
+                            <li><a class="dropdown-item" href="./auth/logout.php">Logout</a></li>
                         </ul>
                         </ul>
                     </li>
@@ -63,15 +62,22 @@ if (isset($_SESSION)) {
 
 <body>
     <!-- FORM -->
-    <div class="align-items-center d-flex flex-column" style="margin-top: 4rem; ">
+    <!-- pop up berhasil -->
+    <?php if (isset($_SESSION['message'])) : ?>
+        <div class="alert alert-success alert-dismissible fade show fade in mt-2" role="alert">
+            <?= $_SESSION['message']; ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php
+        unset($_SESSION['message']);
+    endif; ?>
+    <div class="align-items-center min-vh-100 d-flex flex-column" style="margin-top: 4rem; ">
         <div class="card" style="width: 80%;">
-            <form method="POST" action="./auth/config.php">
+            <form action="" method="POST">
                 <h3 style="margin-top: 1rem; text-align:center">Profile</h3>
                 <div>
-                    <input type="hidden" name="id" value="<?php echo $select['id'] ?>">
                     <div class="modal-body">
                         <div class=" container">
-
                             <div class="mb-3 row">
                                 <label class="col-sm-2 col-form-label">Email</label>
                                 <div class="col-sm-10">

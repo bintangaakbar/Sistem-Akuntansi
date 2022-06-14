@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2022 at 07:59 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Generation Time: Jun 14, 2022 at 04:09 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,17 +36,6 @@ CREATE TABLE `perhiasan` (
   `gambar` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `perhiasan`
---
-
-INSERT INTO `perhiasan` (`id`, `nama`, `jenis`, `deskripsi`, `harga`, `gambar`) VALUES
-(1, 'berlain rare', 'Kalung', 'Ini berlian rare', 5000, '0'),
-(2, 'Anting rare', 'Anting', 'Ini anting ges', 23121, '0'),
-(3, 'Ini anting sumpah', 'Anting', 'ini anting coy', 2000, 'mockingspongebobbb.jpg'),
-(4, 'Ini berlian', 'Kalung', 'Berlian', 2147483647, 'ss.jpg'),
-(5, 'Ini berlain lagi', 'Gelang', 'adsadasdqw3', 231221, '151711-apps-feature-best-zoom-backgrounds-fun-virtual-backgrounds-for-zoom-meetings-image1-tsrrckpzn8.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -58,7 +47,7 @@ CREATE TABLE `user` (
   `nama` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `no_hp` int(255) NOT NULL
+  `no_hp` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -66,7 +55,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `email`, `password`, `no_hp`) VALUES
-(1, 'Bintang', 'banugrah2@gmail.com', '$2y$10$k7iWF9udKmxjlfgx.YYMg.MpztBttvilnkE4CDjq9wUgQ6AdO8Y3W', 353221);
+(1, 'Bintang', 'banugrah2@gmail.com', '$2y$10$k7iWF9udKmxjlfgx.YYMg.MpztBttvilnkE4CDjq9wUgQ6AdO8Y3W', '353221'),
+(2, 'Joel R. Damanik', 'joeldamanik2001@gmail.com', '$2y$10$MefH2fI7iFm7iSTEOUnI6O7BRJLwMdHshEEvT24zoNivobwQCDgHK', '081362552455');
 
 --
 -- Indexes for dumped tables
@@ -98,7 +88,7 @@ ALTER TABLE `perhiasan`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

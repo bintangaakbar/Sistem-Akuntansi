@@ -11,30 +11,38 @@ if (!$conn) {
             </script>";
 }
 
-if (isset($_POST['update'])) {
+function update($request)
+{
+    global $conn;
     $id = $_SESSION['id'];
-    $nama = $_POST['nama'];
-    $email = $_POST['email'];
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $passwordconfirm = mysqli_real_escape_string($conn, $_POST['passwordconfirm']);
-    $no_hp = $_POST['no_hp'];
-    $warna = $_POST['warna'];
+    $nama = $request['nama'];
+    $email = $request['email'];
+    $password = mysqli_real_escape_string($conn, $request['password']);
+    $passwordconfirm = mysqli_real_escape_string($conn, $request['passwordconfirm']);
+    $no_hp = $request['no_hp'];
 
     if ($password == $passwordconfirm) {
+        if ($password == '') {
+            $query = "UPDATE user set nama='$nama', email='$email', no_hp='$no_hp' WHERE id = '$id' ";
+            $_SESSION['message'] = 'Berhasil update profile';
+            mysqli_query($conn, $query);
+            exit();
+        }
         $password = password_hash($password, PASSWORD_DEFAULT);
-
-        $query = "UPDATE user set  nama='$nama',  no_hp='$no_hp',  password='$password' WHERE id = '$id' ";
+        $query = "UPDATE user set nama='$nama', email='$email', no_hp='$no_hp', password='$password' WHERE id = '$id' ";
         mysqli_query($conn, $query);
-
         $_SESSION['message'] = 'Berhasil update profile';
-        setcookie('warna', $warna, strtotime('+6 days'), '/');
-
-        header("Location: ../profil.php");
-    } else {
-        $_SESSION['message'] = 'Password Tidak sama';
-
-        header("Location: ../profil.php");
+        header("Location: ./profil.php");
+        exit();
+    } else if ($password != $passwordconfirm) {
+        $_SESSION['message'] = 'Password Tidak Cocok, Silahkan Coba Lagi';
+        header("Location: ./profil.php");
+        exit();
     }
+    $query = "UPDATE user set nama='$nama', email='$email', no_hp='$no_hp' WHERE id = '$id' ";
+    $_SESSION['message'] = 'Berhasil update profile';
+    mysqli_query($conn, $query);
+    exit();
 }
 
 
