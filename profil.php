@@ -118,8 +118,8 @@ if (isset($_SESSION)) {
                             </div>
 
                             <div class="col d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary me-2" name="update">Simpan</button>
-                                <a href="index.php" type="button" class="btn btn-danger">Cancel</a>
+                                <button type="submit" class="btn btn-primary me-2" name="update" style="width: 25%">Simpan</button>
+                                <a href="index.php" type="button" class="btn btn-danger" style="width: 25%">Cancel</a>
                             </div>
                         </div>
                     </div>
