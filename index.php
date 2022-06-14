@@ -74,35 +74,36 @@ if (isset($_POST['login'])) {
 </head>
 
 <body>
-    <section class="container vh-100">
-        <?php if ($selectdata->num_rows > 0) { ?>
-            <?php while ($selects = mysqli_fetch_assoc($selectdata)) { ?>
-                <div class="card me-3 align-items-center d-flex flex-column" style="width: 18rem;">
-                    <img src="file/<?php echo $selects['gambar'] ?>" class="card-img-top" alt="..." style="width:200px">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $selects['nama'] ?></h5>
-                        <p class="card-text"><?php echo $selects['deskripsi'] ?> </p>
+    <section class="container min-vh-100 mt-5 mb-5">
+        <div class="d-flex justify-content-center flex-wrap">
+            <?php if ($selectdata->num_rows > 0) { ?>
+                <?php while ($selects = mysqli_fetch_assoc($selectdata)) { ?>
+                    <div class=" card p-3 me-3 mt-4" style="width: 18rem;">
+                        <img src="file/<?php echo $selects['gambar'] ?>" class="card-img-top " alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $selects['nama'] ?></h5>
+                            <p class="card-text"><?php echo $selects['deskripsi'] ?></p>
+                        </div>
+                        <a href="detail_perhiasan.php?id=<?php echo $selects['id'] ?>" class="btn btn-primary">Tampilkan Lebih Lanjut</a>
                     </div>
-                    <a href="detail_perhiasan.php?id=<?php echo $selects['id'] ?>" class="btn btn-primary">Tampilkan Lebih Lanjut</a>
+                <?php } ?>
+            <?php } else { ?>
+                <div class="container" style="margin-top: 10rem; text-align:center;">
+                    <h3 class="mb-4">Empty Inventory</h3>
+                    <hr style="height:5px; width:80%; border-width:0; color:aqua; margin:auto">
+                    <p class="mt-2">Please add inventory</p>
+                    <a href="tambah.php" type="button" class="btn btn-secondary btn-md">Add Data</a>
                 </div>
             <?php } ?>
-        <?php } else { ?>
-            <div class="container" style="margin-top: 10rem; text-align:center;">
-                <h3 class="mb-4">Empty Inventory</h3>
-                <hr style="height:5px; width:80%; border-width:0; color:aqua; margin:auto">
-                <p class="mt-2">Please add inventory</p>
-                <a href="tambah.php" type="button" class="btn btn-secondary btn-md">Add Data</a>
-            </div>
-        <?php } ?>
+        </div>
     </section>
 
-
-
+    <?php include 'footer.php'; ?>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
-<?php include 'footer.php'; ?>
+
 
 </html>

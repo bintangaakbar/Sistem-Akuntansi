@@ -7,18 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer</title>
     <script src="https://kit.fontawesome.com/a840441b58.js" crossorigin="anonymous"></script>
+    <style>
+
+    </style>
 </head>
 
 <body>
 
     <footer class="text-center text-white" style="background-color: #f1f1f1;">
-        <!-- Container -->
-        <div class="container">
-            <!-- Google -->
-
-        </div>
-        <!-- Grid container -->
-
         <!-- Copyright -->
         <div class="d-flex justify-content-between text-dark p-2 ps-4 pe-4" style="background-color: rgba(0, 0, 0, 0.2);">
             <div style="margin-top: 10px;">
