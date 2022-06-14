@@ -36,9 +36,15 @@ if (isset($_SESSION)) {
             </button>
 
             <div class="navbar-nav" style="margin-left: 60rem;">
+                <div class="navbar-nav">
+                    <a class="nav-link rounded me-5" href="index.php" style="color: white">Home</a>
+                </div>
+                <div class="navbar-nav">
+                    <a class="nav-link rounded me-5" href="tambah.php" style="color: white">Tambah Barang</a>
+                </div>
                 <?php if (isset($_SESSION['nama'])) : ?>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" style="color: orange" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?php echo $select['nama'] ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -46,7 +52,7 @@ if (isset($_SESSION)) {
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="./auth/logout.php">Logout</a></li>
+                            <li><a class="dropdown-item" href="/auth/logout.php">Logout</a></li>
                         </ul>
                         </ul>
                     </li>

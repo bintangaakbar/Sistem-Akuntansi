@@ -45,6 +45,9 @@ $jenis = explode(" ", $selectdata['jenis']);
 
             <div class="navbar-nav" style="margin-left: 60rem;">
                 <div class="navbar-nav">
+                    <a class="nav-link rounded me-5" href="index.php" style="color: white">Home</a>
+                </div>
+                <div class="navbar-nav">
                     <a class="nav-link rounded me-5" href="tambah.php" style="color: white">Tambah Barang</a>
                 </div>
                 <?php if (isset($_SESSION['nama'])) : ?>

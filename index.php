@@ -40,7 +40,7 @@ if (isset($_POST['login'])) {
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" id="nav1">
         <div class="container-fluid ">
-            <a class="navbar-brand" href="#"><img src="img/Duo Putri-logos.jpeg" class="rounded-circle" alt="" width="70px"></a>
+            <a class="navbar-brand" href="index.php"><img src="img/Duo Putri-logos.jpeg" class="rounded-circle" alt="" width="70px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -89,10 +89,10 @@ if (isset($_POST['login'])) {
                 <?php } ?>
             <?php } else { ?>
                 <div class="container" style="margin-top: 10rem; text-align:center;">
-                    <h3 class="mb-4">Empty Inventory</h3>
+                    <h3 class="mb-4">Inventori kosong</h3>
                     <hr style="height:5px; width:80%; border-width:0; color:aqua; margin:auto">
-                    <p class="mt-2">Please add inventory</p>
-                    <a href="tambah.php" type="button" class="btn btn-secondary btn-md">Add Data</a>
+                    <p class="mt-2">Klik tombol Tambah untuk menambahkan data baru!</p>
+                    <a href="tambah.php" type="button" class="btn btn-secondary btn-md">Tambah</a>
                 </div>
             <?php } ?>
         </div>
