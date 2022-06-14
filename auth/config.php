@@ -46,14 +46,15 @@ if (isset($_POST['tambah'])) {
     $jenis = implode(" ", $_POST['jenis']);
     $gambar = $_FILES['gambar']['name'];
 
+    if (strlen($gambar) > 0) {
+        if (is_uploaded_file($_FILES['gambar']['tmp_name'])) {
+            move_uploaded_file($_FILES['gambar']['tmp_name'], "../file/" . $gambar);
+        }
+    }
+
     $query = "INSERT INTO perhiasan (nama, deskripsi, harga, jenis, gambar) 
     VALUES ('$nama', '$deskripsi', '$harga', '$jenis', '$gambar')";
 
-    if (($gambar) > 0) {
-        if (is_uploaded_file($_FILES['gambar']['tmp_name'])) {
-            move_uploaded_file($_FILES['gambar']['tmp_name'], "file/" . $gambar);
-        }
-    }
     $insert = mysqli_query($conn, $query);
 
     header('Location: ../index.php');

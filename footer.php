@@ -1,71 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <script src="https://kit.fontawesome.com/a840441b58.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    <footer class="footer-59391" style="position: absolute; bottom: 0; width: 100%;">
+    <footer class="text-center text-white" style="background-color: #f1f1f1;">
+        <!-- Container -->
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="site-logo">
-                        <a href="index.php">Duo Putri</a>
-                    </div>
-                </div>
-                <div class="col-md-8 text-md-right">
-                    <ul class="list-unstyled social-icons">
-                        <a href="https://www.instagram.com/" class="instagram" target="_blank"><i class="bi bi-instagram"> </i><img src="./img/instagram-logo.png" class="logo1"> </i></a>
-                        <a href="https://www.twitter.com/" class="instagram" target="_blank"><i class="bi bi-instagram"> </i><img src="./img/icons8-twitter-48.png" class="logo1"> </i></a>
-                        <a href="https://www.facebook.com/" class="instagram" target="_blank"><i class="bi bi-instagram"> </i><img src="./img/icons8-facebook-48.png" class="logo1"> </i></a>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 ">
-                    <ul class="nav-links list-unstyled nav-left">
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-6 text-md-right">
-                    <ul class="nav-links list-unstyled nav-right">
-                        <li><a href="index.php">Beranda</a></li>
-                        <li><a href="#">Produk</a></li>
-                        <li><a href="./contact/index.html">Kontak</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="text-center">
-                <p>&#169; Copyright 2022. All Rights Reserved</p>
-            </div>
-        </div>
+            <!-- Google -->
 
         </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="d-flex justify-content-between text-dark p-2 ps-4 pe-4" style="background-color: rgba(0, 0, 0, 0.2);">
+            <div style="margin-top: 10px;">
+                <img src="./img/Duo Putri-logos.jpeg" class="rounded-circle mb-1" width="55 px" alt="">
+                <span class="fw-bold">© 2020 Copyright. All Right Reserved</span>
+            </div>
+            <div style="margin-top:8px">
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <!-- Copyright -->
     </footer>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
