@@ -2,7 +2,7 @@
 # Inventoris Toko Perhiasan
 
 Admin only
-## Dibangun oleh
+## Build By
 
 - [Bintang Anugrah](https://.github.com/bintangaakbar)
 - [Joel Rayapoh](https://github.com/dJull)
