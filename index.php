@@ -74,7 +74,9 @@ if (isset($_POST['login'])) {
 </head>
 
 <body>
+    <!-- CARD -->
     <section class="container min-vh-100 mt-5 mb-5">
+        <h1 class="d-flex justify-content-center" style="font-family: 'Courier New', monospace;"><b>Flagship DuoPutri</b></h1>
         <div class="d-flex justify-content-center flex-wrap">
             <?php if ($selectdata->num_rows > 0) { ?>
                 <?php while ($selects = mysqli_fetch_assoc($selectdata)) { ?>
@@ -97,6 +99,13 @@ if (isset($_POST['login'])) {
             <?php } ?>
         </div>
     </section>
+    <!-- ENDING CARD -->
+
+
+
+    <!-- TABLE -->
+    <!-- ENDING TABLE -->
+
 
     <?php include 'footer.php'; ?>
 
