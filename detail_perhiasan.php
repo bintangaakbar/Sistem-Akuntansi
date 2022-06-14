@@ -82,7 +82,7 @@ $jenis = explode(" ", $selectdata['jenis']);
 <body>
 
     <form>
-        <div class="container mt-5">
+        <div class="container mt-5 min-vh-100">
             <div class="card containerm row">
                 <form action="./auth/config.php" method="POST" enctype="multipart/form-data">
                     <h1 style="text-align: center; margin-bottom: 2rem;">Detail Data Perhiasan</h1>
@@ -144,7 +144,7 @@ $jenis = explode(" ", $selectdata['jenis']);
                     </div>
 
                     <!-- BUTTON -->
-                    <div class="d-grid gap-2 col-6 mx-auto">
+                    <div class="d-grid gap-2 col-6 mx-auto mt-3 mb-5">
                         <button class="btn btn-primary" type="submit" name="tambah">Submit</button>
                     </div>
             </div>

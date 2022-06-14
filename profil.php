@@ -63,15 +63,14 @@ if (isset($_SESSION)) {
 
 <body>
     <!-- FORM -->
-    <div class="align-items-center d-flex flex-column" style="margin-top: 4rem; ">
+    <div class="align-items-center d-flex flex-column min-vh-100" style="margin-top: 4rem; ">
         <div class="card" style="width: 80%;">
             <form method="POST" action="./auth/config.php">
                 <h3 style="margin-top: 1rem; text-align:center">Profile</h3>
                 <div>
                     <input type="hidden" name="id" value="<?php echo $select['id'] ?>">
                     <div class="modal-body">
-                        <div class=" container">
-
+                        <div class="container ">
                             <div class="mb-3 row">
                                 <label class="col-sm-2 col-form-label">Email</label>
                                 <div class="col-sm-10">
@@ -112,8 +111,8 @@ if (isset($_SESSION)) {
                             </div>
 
                             <div class="col d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary me-2" name="update">Simpan</button>
-                                <a href="index.php" type="button" class="btn btn-danger">Cancel</a>
+                                <button type="submit" class="btn btn-primary me-2" name="update" style="width: 25%">Simpan</button>
+                                <a href="index.php" type="button" class="btn btn-danger" style="width: 25%">Cancel</a>
                             </div>
                         </div>
                     </div>
