@@ -78,7 +78,7 @@ $jenis = explode(" ", $selectdata['jenis']);
                 <h1 style="text-align: center; margin-bottom: 2rem;">Detail Data Perhiasan</h1>
 
                 <div class="form-group mt-2 d-flex justify-content-center">
-                    <img src="file/<?php echo $selectdata['gambar'] ?>" class="justify-content-center" style="width:400px" alt="...">
+                    <img src="store/<?php echo $selectdata['gambar'] ?>" class="justify-content-center" style="width:400px" alt="...">
                 </div>
 
                 <input type="hidden" class="form-control" name="id" id="formGroupExampleInput" value="<?php echo $selectdata['id'] ?>">

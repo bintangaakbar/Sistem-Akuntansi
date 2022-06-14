@@ -79,7 +79,7 @@ if (isset($_POST['login'])) {
             <?php if ($selectdata->num_rows > 0) { ?>
                 <?php while ($selects = mysqli_fetch_assoc($selectdata)) { ?>
                     <div class=" card p-3 me-3 mt-4" style="width: 18rem;">
-                        <img src="file/<?php echo $selects['gambar'] ?>" class="card-img-top " alt="...">
+                        <img src="store/<?php echo $selects['gambar'] ?>" class="card-img-top " alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $selects['nama'] ?></h5>
                             <p class="card-text"><?php echo $selects['deskripsi'] ?></p>

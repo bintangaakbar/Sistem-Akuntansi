@@ -54,7 +54,7 @@ if (isset($_POST['update_barang'])) {
 
     if (strlen($gambar) > 0) {
         if (is_uploaded_file($_FILES['gambar']['tmp_name'])) {
-            move_uploaded_file($_FILES['gambar']['tmp_name'], "../file/" . $gambar);
+            move_uploaded_file($_FILES['gambar']['tmp_name'], "../store/" . $gambar);
         }
     }
     $query = "UPDATE perhiasan SET nama='$nama', deskripsi='$deskripsi', harga='$harga', jenis='$jenis', gambar='$gambar' 
@@ -83,7 +83,7 @@ if (isset($_POST['tambah'])) {
 
     if (strlen($gambar) > 0) {
         if (is_uploaded_file($_FILES['gambar']['tmp_name'])) {
-            move_uploaded_file($_FILES['gambar']['tmp_name'], "../file/" . $gambar);
+            move_uploaded_file($_FILES['gambar']['tmp_name'], "../store/" . $gambar);
         }
     }
 

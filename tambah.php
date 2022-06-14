@@ -57,7 +57,7 @@ if (isset($_POST['login'])) {
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="/auth/logout.php">Logout</a></li>
+                            <li><a class="dropdown-item" href="./auth/logout.php">Logout</a></li>
                         </ul>
                         </ul>
                     </li>
