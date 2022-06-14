@@ -6,7 +6,7 @@ if (!$_SESSION['id']) {
     exit();
 }
 
-$querydata = "SELECT * FROM perhiasan";
+$querydata = "SELECT * FROM perhiasan ORDER BY harga DESC";
 $selectdata = mysqli_query($conn, $querydata);
 
 if (isset($_SESSION)) {
