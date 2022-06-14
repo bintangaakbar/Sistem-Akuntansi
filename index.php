@@ -1,10 +1,10 @@
 <?php
 include('./auth/config.php');
-
-if (!isset($_SESSION)) {
-    session_start();
+session_start();
+if (!$_SESSION['id']) {
+    header("location:auth/login.php");
+    exit();
 }
-
 
 $querydata = "SELECT * FROM perhiasan";
 $selectdata = mysqli_query($conn, $querydata);
@@ -18,8 +18,6 @@ if (isset($_SESSION)) {
 if (isset($_POST['login'])) {
     login($_POST);
 }
-
-
 
 ?>
 <!doctype html>
@@ -63,7 +61,7 @@ if (isset($_POST['login'])) {
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="./auth/config.php?logout=logout">Logout</a></li>
+                            <li><a class="dropdown-item" href="./auth/logout.php">Logout</a></li>
                         </ul>
                         </ul>
                     </li>

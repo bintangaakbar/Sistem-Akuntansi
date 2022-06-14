@@ -11,14 +11,6 @@ if (!$conn) {
             </script>";
 }
 
-
-if (isset($_GET['logout'])) {
-    session_destroy();
-    $_SESSION['message'] = 'Berhasil Logout';
-    header("Location: login.php");
-}
-
-
 if (isset($_POST['update'])) {
     $id = $_SESSION['id'];
     $nama = $_POST['nama'];
