@@ -4,7 +4,7 @@
 Admin only
 ## Build By
 
-- [Bintang Anugrah](https://.github.com/bintangaakbar)
+- [Bintang Anugrah](https://github.com/bintangaakbar)
 - [Joel Rayapoh](https://github.com/dJull)
 - [Wiridho](https://github.com/wiridho)
 ## Run the project
