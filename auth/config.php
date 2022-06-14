@@ -162,14 +162,10 @@ function login($request)
             $_SESSION['email'] = $result['email'];
             $_SESSION['no_hp'] = $result['no_hp'];
 
-            $_SESSION['message'] = 'Berhasil Login';
-
             header("Location: ../index.php");
 
             exit();
         } else {
-            $_SESSION['message'] = 'Password Salah';
-
             header("Location: login.php");
             exit();
         }
