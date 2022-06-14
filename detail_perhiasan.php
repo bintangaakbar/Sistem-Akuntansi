@@ -83,12 +83,12 @@ $jenis = explode(" ", $selectdata['jenis']);
 
     <form>
         <div class="container mt-5 min-vh-100">
-            <div class="card containerm row">
+            <div class="card container row">
                 <form action="./auth/config.php" method="POST" enctype="multipart/form-data">
                     <h1 style="text-align: center; margin-bottom: 2rem;">Detail Data Perhiasan</h1>
 
-                    <div class="form-group mt-2">
-                        <img src="file/<?php echo $selectdata['gambar'] ?>" class="card-img-top" style="width:300px" alt="...">
+                    <div class="form-group mt-2 d-flex justify-content-center">
+                        <img src="file/<?php echo $selectdata['gambar'] ?>" class="justify-content-center" style="width:400px" alt="...">
                     </div>
 
                     <div class="form-group mt-2">
@@ -144,48 +144,14 @@ $jenis = explode(" ", $selectdata['jenis']);
                     </div>
 
                     <!-- BUTTON -->
-                    <div class="d-grid gap-2 col-6 mx-auto mt-3 mb-5">
-                        <button class="btn btn-primary" type="submit" name="tambah">Submit</button>
+                    <div class="col mt-3 mb-5 d-flex justify-content-center">
+                        <button class="btn btn-primary me-4" type="submit" name="tambah" style="width: 25%;">Simpan</button>
+                        <button class="btn btn-danger" type="submit" name="delete" style="width: 25%;">Hapus</button>
                     </div>
+
             </div>
         </div>
     </form>
-
-    <!-- <form action="./auth/config.php" method="POST" enctype="multipart/form-data">
-        <div class="container mt-5">
-            <div class="card containerm row">
-                <div style="margin-bottom:2rem" class="align-items-center d-flex flex-column">
-                    <h1 style="text-align: center;">Detail Perhiasan</h1>
-                    <img src="file/<?php echo $select['gambar'] ?>" class="card-img-top" style="width:300px" alt="...">
-                </div>
-                <hr style="height:5px; width:100%; border-width:0; color:aqua; margin:auto;">
-                <div>
-                    <label><b>Nama:</b></label>
-                    <p><?php echo $select['nama'] ?></p>
-                </div>
-                <div>
-                    <label><b>Deskripsi</b></label>
-                    <p><?php echo $select['deskripsi'] ?></p>
-                </div>
-                <div>
-                    <label><b>Harga:</b></label>
-                    <p><?php echo $select['harga'] ?></p>
-                </div>
-                <div>
-                    <label><b>Jenis:</b></label>
-                    <p><?php echo $select['jenis'] ?></p>
-                </div>
-
-                <div style="margin-top: 1rem;" class="row justify-content-center">
-                    <button type="button" class="btn btn-primary btn-lg col me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Sunting</button>
-                    <a href="./auth/config.php?id=<?= $select['id'] ?>" type="submit" name="delete" class="btn btn-danger btn-lg col">Hapus</a>
-                </div>
-            </div>
-        </div>
-    </form> -->
-
-
-
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
