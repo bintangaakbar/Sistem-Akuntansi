@@ -41,8 +41,6 @@ if (isset($_POST['login'])) {
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-
-
             <div class="navbar-nav" style="margin-left: 60rem;">
                 <div class="navbar-nav">
                     <a class="nav-link rounded me-5" href="index.php" style="color: white">Home</a>
@@ -55,7 +53,7 @@ if (isset($_POST['login'])) {
                         <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" style="color: orange" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?php echo $select['nama'] ?>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="profil.php">Profile</a></li>
                             <li>
                                 <hr class="dropdown-divider">

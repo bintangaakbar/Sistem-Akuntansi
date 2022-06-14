@@ -67,7 +67,6 @@ if (isset($_POST['update_barang'])) {
 
 if (isset($_POST['delete_barang'])) {
     $id_barang = $_POST['id'];
-
     $query = "DELETE FROM perhiasan WHERE id='$id_barang'";
     $delete = mysqli_query($conn, $query);
     header('Location: ../index.php');
@@ -95,15 +94,14 @@ if (isset($_POST['tambah'])) {
     header('Location: ../index.php');
 }
 
-function delete($request)
-{
-    global $conn;
-    $id = $_GET['id'];
-    $query = "DELETE FROM perhiasan WHERE id ='$id'";
-    $update = mysqli_query($conn, $query);
+// if (isset($_POST['delete_barang'])) {
+//     global $conn;
+//     $id = $_POST['id'];
+//     $query = "DELETE FROM perhiasan WHERE id ='$id'";
 
-    header('Location: ../index.php');
-}
+//     $delete = mysqli_query($conn, $query);
+//     header('Location: ../index.php');
+// }
 
 function register($request)
 {

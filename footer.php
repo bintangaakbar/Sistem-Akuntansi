@@ -19,7 +19,7 @@
         <div class="d-flex justify-content-between text-dark p-2 ps-4 pe-4" style="background-color: rgba(0, 0, 0, 0.2);">
             <div style="margin-top: 10px;">
                 <img src="./img/Duo Putri-logos.jpeg" class="rounded-circle mb-1" width="55 px" alt="">
-                <span class="fw-bold">© 2020 Copyright. All Right Reserved</span>
+                <span class="fw-bold">© 2022 Copyright. All Right Reserved</span>
             </div>
             <div style="margin-top:8px">
                 <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>

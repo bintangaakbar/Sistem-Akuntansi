@@ -9,6 +9,9 @@ if (!$_SESSION['id']) {
 $querydata = "SELECT * FROM perhiasan ORDER BY harga DESC";
 $selectdata = mysqli_query($conn, $querydata);
 
+$querydata1 = "SELECT * FROM perhiasan";
+$selectdata1 = mysqli_query($conn, $querydata1);
+
 if (isset($_SESSION)) {
     $id = $_SESSION['id'];
     $query = "SELECT * FROM user WHERE id='$id' LIMIT 1";
@@ -53,7 +56,7 @@ if (isset($_POST['login'])) {
                         <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" style="color: orange" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?php echo $select['nama'] ?>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="profil.php">Profile</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -75,7 +78,7 @@ if (isset($_POST['login'])) {
 
 <body>
     <!-- CARD -->
-    <section class="container min-vh-100 mt-5 mb-5">
+    <section class="container mt-5 min-vh-100">
         <h1 class="d-flex justify-content-center" style="font-family: 'Courier New', monospace;"><b>Flagship DuoPutri</b></h1>
         <div class="d-flex justify-content-center flex-wrap">
             <?php if ($selectdata->num_rows > 0) { ?>
@@ -98,13 +101,50 @@ if (isset($_POST['login'])) {
                 </div>
             <?php } ?>
         </div>
+        <!-- ENDING CARD -->
+
+        <!-- TABLE -->
+        <div class="mt-5 mb-4">
+            <h1 class="d-flex justify-content-center" style="font-family: 'Courier New', monospace;"><b>Data Toko</b></h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nomor</th>
+                        <th scope="col">Nama Perhiasan</th>
+                        <th scope="col">Jenis</th>
+                        <th scope="col">Deskripsi</th>
+                        <th scope="col">Harga</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $number = 1;
+                    $total = 0;
+                    while ($select = mysqli_fetch_assoc($selectdata1)) :
+                    ?>
+                        <tr>
+                            <th scope="row"><?php echo $number++  ?></th>
+                            <td><?php echo $select['nama'] ?></td>
+                            <td><?php echo $select['jenis'] ?></td>
+                            <td><?php echo $select['deskripsi'] ?></td>
+                            <td><?php echo $select['harga'] ?></td>
+                            <td class="d-flex">
+                                <a href="detail_perhiasan.php?id=<?php echo $select['id'] ?>" class="btn btn-primary me-2"> Detail </a>
+                                <form action="./auth/config.php" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" name="id" hidden value="<?php echo $select['id'] ?>">
+                                    <button class="btn btn-danger" type="submit" name="delete_barang">Hapus</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <?php endwhile ?>
+                </tbody>
+            </table>
+        </div>
+        <!-- ENDING TABLE -->
+
     </section>
-    <!-- ENDING CARD -->
 
 
-
-    <!-- TABLE -->
-    <!-- ENDING TABLE -->
 
 
     <?php include 'footer.php'; ?>
