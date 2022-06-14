@@ -26,7 +26,6 @@ function update($request)
             $query = "UPDATE user set nama='$nama', email='$email', no_hp='$no_hp' WHERE id = '$id' ";
             $_SESSION['message'] = 'Berhasil update profile';
             mysqli_query($conn, $query);
-            exit();
         }
         $password = password_hash($password, PASSWORD_DEFAULT);
         $query = "UPDATE user set nama='$nama', email='$email', no_hp='$no_hp', password='$password' WHERE id = '$id' ";
@@ -45,6 +44,34 @@ function update($request)
     exit();
 }
 
+if (isset($_POST['update_barang'])) {
+    $id_barang = $_POST['id'];
+    $nama = $_POST['nama'];
+    $harga = $_POST['harga'];
+    $deskripsi = $_POST['deskripsi'];
+    $jenis = implode(" ", $_POST['jenis']);
+    $gambar = $_FILES['gambar']['name'];
+
+    if (strlen($gambar) > 0) {
+        if (is_uploaded_file($_FILES['gambar']['tmp_name'])) {
+            move_uploaded_file($_FILES['gambar']['tmp_name'], "../file/" . $gambar);
+        }
+    }
+    $query = "UPDATE perhiasan SET nama='$nama', deskripsi='$deskripsi', harga='$harga', jenis='$jenis', gambar='$gambar' 
+    WHERE id='$id_barang'";
+
+    $update = mysqli_query($conn, $query);
+
+    header('Location: ../detail_perhiasan.php?id=' . $id_barang);
+}
+
+if (isset($_POST['delete_barang'])) {
+    $id_barang = $_POST['id'];
+
+    $query = "DELETE FROM perhiasan WHERE id='$id_barang'";
+    $delete = mysqli_query($conn, $query);
+    header('Location: ../index.php');
+}
 
 if (isset($_POST['tambah'])) {
     $id = $_GET['id'];
